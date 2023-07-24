@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/wpa-to-do-list/static/css/main.31d6cfe0.css",
-    "main.js": "/wpa-to-do-list/static/js/main.12f1f473.js",
-    "index.html": "/wpa-to-do-list/index.html",
-    "main.12f1f473.js.map": "/wpa-to-do-list/static/js/main.12f1f473.js.map"
+    "main.css": "/static/css/main.31d6cfe0.css",
+    "main.js": "/static/js/main.12f1f473.js",
+    "index.html": "/index.html",
+    "main.12f1f473.js.map": "/static/js/main.12f1f473.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
