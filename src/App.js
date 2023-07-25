@@ -6,6 +6,11 @@ export default function App() {
     { id: 2, todo: "Example Todo Nr 2", done: false },
     { id: 3, todo: "Example Todo Nr 3", done: true },
   ]);
+
+  useEffect(() => {
+    document.title = `${todos.length} open task${todos.length > 1 ? "s" : ""}`;
+  }, [todos]);
+
   const toggleDone = (todoId) => {
     // Find the todo by id
     const updatedTodos = todos.map((todo) =>
