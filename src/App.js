@@ -6,23 +6,11 @@ export default function App() {
     { id: 2, todo: "Example Todo Nr 2", done: false },
     { id: 3, todo: "Example Todo Nr 3", done: true },
   ]);
-  async function giphyTest() {
-    console.log("process.env:", process.env);
-    console.log(
-      "process.env.REACT_APP_GIPHY_API_KEY",
-      process.env.REACT_APP_GIPHY_API_KEY
-    );
-    console.log(
-      await fetch(
-        "https://api.giphy.com/v1/gifs/random?api_key=KKNdzmabIM8dSsWIARkst0tmOJVg1oXf&tag=relax&rating=g"
-      )
-    );
-  }
+
   useEffect(() => {
     const length = todos.filter((todo) => todo.done === false).length;
     if (length === 0) {
       document.title = "You got nothing to do, relax 🍃📚";
-      giphyTest();
     } else {
       document.title = `${
         todos.filter((todo) => todo.done === false).length
