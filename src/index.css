@@ -31,7 +31,8 @@ h1 {
   text-align: center;
 }
 
-.ToDoList {
+.DoneToDoList,
+.OpenToDoList {
   list-style: none;
   padding: 0px;
   text-align: center;
@@ -48,4 +49,41 @@ li.done>.toDoText {
 
 .removeToDo {
   cursor: pointer;
+}
+
+/* CSS */
+input[type=submit],
+input[type=text] {
+  background-color: #c8adc0ff;
+  border: 2px solid #7765e3ff;
+  border-radius: 30px;
+  box-shadow: #7765e3ff 4px 4px 0 0;
+  color: #7765e3ff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  max-width: 150px;
+  margin: 10px;
+}
+
+input[type=submit]:hover,
+input[type=text]:hover {
+  background-color: #fff;
+}
+
+input[type=submit]:active {
+  box-shadow: #7765e3ff 2px 2px 0 0;
+  border: 2px solid #7765e3ff;
+  transform: translate(2px, 2px);
+}
+
+input[type=text]:focus,
+input[type=text]:focus-visible {
+  outline: none;
+}
+
+hr {
+  width: 80%;
 }
