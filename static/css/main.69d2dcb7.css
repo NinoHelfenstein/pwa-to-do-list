@@ -1,2 +1,0 @@
-:root{--champagne-pink:#edd3c4;--thistle:#c8adc0;--medium-slate-blue:#7765e3;--savoy-blue:#3b60e4;--black:#080708}body,html{height:100%;margin:0;padding:0;width:100%}body{align-items:center;background-color:#edd3c4;background-color:var(--champagne-pink);display:flex;flex-direction:column;justify-content:start;padding-top:20px}h1{text-align:center}.ToDoList{list-style:none}li{color:#080708;color:var(--black)}li.done>.toDoText{color:#7765e3;color:var(--medium-slate-blue);text-decoration:line-through}
-/*# sourceMappingURL=main.69d2dcb7.css.map*/
