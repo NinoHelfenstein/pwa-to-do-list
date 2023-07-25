@@ -87,3 +87,12 @@ input[type=text]:focus-visible {
 hr {
   width: 80%;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.gif {
+  width: 80%;
+}

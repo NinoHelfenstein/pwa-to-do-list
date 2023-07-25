@@ -45,19 +45,32 @@ export default function App() {
       <Header />
       <Form addToDo={addToDo} />
       <ul className="OpenToDoList">
-        {todos.filter((todo) => todo.done === false).length === 0
-          ? "You got nothing to do, relax 🍃📚"
-          : todos
-              .filter((todo) => todo.done === false)
-              .sort((a, b) => b.id - a.id)
-              .map((item) => (
-                <ToDoItem
-                  key={item.id}
-                  item={item}
-                  toggleDone={toggleDone}
-                  removeToDo={removeToDo}
-                />
-              ))}
+        {todos.filter((todo) => todo.done === false).length === 0 ? (
+          <>
+            <img
+              className="gif"
+              src="https://media.tenor.com/cNHU73CvqLUAAAAC/relax-chillin.gif"
+              alt="https://tenor.com/de/view/relax-chillin-just-extra-gif-20242751"
+            />
+            <br />
+            <a href="https://tenor.com/de/view/relax-chillin-just-extra-gif-20242751">
+              Relax Chillin GIF
+            </a>
+            <p>"You got nothing to do, relax 🍃📚"</p>
+          </>
+        ) : (
+          todos
+            .filter((todo) => todo.done === false)
+            .sort((a, b) => b.id - a.id)
+            .map((item) => (
+              <ToDoItem
+                key={item.id}
+                item={item}
+                toggleDone={toggleDone}
+                removeToDo={removeToDo}
+              />
+            ))
+        )}
       </ul>
       <hr />
       <ul className="DoneToDoList">
