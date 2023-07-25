@@ -20,18 +20,6 @@ export default function App() {
       }`;
     }
   }, [todos]);
-  useEffect(async () => {
-    const length = todos.filter((todo) => todo.done === false).length;
-    if (length === 0) {
-      console.log(
-        await fetch(
-          "https://api.giphy.com/v1/gifs/random?api_key=process.env.REACT_APP_GIPHY_API_KEY&tag=relax&rating=g"
-        )
-      );
-    } else {
-      return;
-    }
-  }, [todos]);
 
   const toggleDone = (todoId) => {
     // Find the todo by id
