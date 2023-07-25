@@ -8,7 +8,10 @@ export default function App() {
   ]);
   async function giphyTest() {
     console.log("process.env:", process.env);
-    console.log("process.env.GIPHY_API_KEY", process.env.GIPHY_API_KEY);
+    console.log(
+      "process.env.REACT_APP_GIPHY_API_KEY",
+      process.env.REACT_APP_GIPHY_API_KEY
+    );
     console.log(
       await fetch(
         "https://api.giphy.com/v1/gifs/random?api_key=KKNdzmabIM8dSsWIARkst0tmOJVg1oXf&tag=relax&rating=g"
