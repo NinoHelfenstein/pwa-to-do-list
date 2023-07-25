@@ -18,6 +18,7 @@ export default function App() {
     const length = todos.filter((todo) => todo.done === false).length;
     if (length === 0) {
       document.title = "You got nothing to do, relax 🍃📚";
+      giphyTest();
     } else {
       document.title = `${
         todos.filter((todo) => todo.done === false).length
