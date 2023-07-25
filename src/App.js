@@ -8,7 +8,11 @@ export default function App() {
   ]);
 
   useEffect(() => {
-    document.title = `${todos.length} open task${todos.length > 1 ? "s" : ""}`;
+    document.title = `${
+      todos.filter((todo) => todo.done === false).length
+    } open task${
+      todos.filter((todo) => todo.done === false).length > 1 ? "s" : ""
+    }`;
   }, [todos]);
 
   const toggleDone = (todoId) => {
