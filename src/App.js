@@ -28,6 +28,7 @@ export default function App() {
     );
     setTodos(updatedTodos);
   };
+
   const removeToDo = (todoId) => {
     // Filter out the todo with the given id
     const updatedTodos = todos.filter((todo) => todo.id !== todoId);
