@@ -10,6 +10,7 @@ export default function App() {
   useEffect(() => {
     const length = todos.filter((todo) => todo.done === false).length;
     if (length === 0) {
+      console.log("process.env:", process.env);
       document.title = "You got nothing to do, relax 🍃📚";
     } else {
       document.title = `${
@@ -22,7 +23,6 @@ export default function App() {
   useEffect(async () => {
     const length = todos.filter((todo) => todo.done === false).length;
     if (length === 0) {
-      console.log("process.env:", process.env);
       console.log(
         await fetch(
           "https://api.giphy.com/v1/gifs/random?api_key=process.env.REACT_APP_GIPHY_API_KEY&tag=relax&rating=g"
