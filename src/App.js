@@ -8,11 +8,16 @@ export default function App() {
   ]);
 
   useEffect(() => {
-    document.title = `${
-      todos.filter((todo) => todo.done === false).length
-    } open task${
-      todos.filter((todo) => todo.done === false).length > 1 ? "s" : ""
-    }`;
+    const length = todos.filter((todo) => todo.done === false).length;
+    if (length === 0) {
+      document.title = "You got nothing to do, relax 🍃📚";
+    } else {
+      document.title = `${
+        todos.filter((todo) => todo.done === false).length
+      } open task${
+        todos.filter((todo) => todo.done === false).length > 1 ? "" : "s"
+      }`;
+    }
   }, [todos]);
 
   const toggleDone = (todoId) => {
@@ -38,9 +43,26 @@ export default function App() {
     <>
       <Header />
       <Form addToDo={addToDo} />
-      <ul className="ToDoList">
+      <ul className="OpenToDoList">
+        {todos.filter((todo) => todo.done === false).length === 0
+          ? "You got nothing to do, relax 🍃📚"
+          : todos
+              .filter((todo) => todo.done === false)
+              .sort((a, b) => b.id - a.id)
+              .map((item) => (
+                <ToDoItem
+                  key={item.id}
+                  item={item}
+                  toggleDone={toggleDone}
+                  removeToDo={removeToDo}
+                />
+              ))}
+      </ul>
+      <hr />
+      <ul className="DoneToDoList">
         {todos
-          .sort((a, b) => a.done - b.done)
+          .filter((todo) => todo.done === true)
+          .sort((a, b) => b.id - a.id)
           .map((item) => (
             <ToDoItem
               key={item.id}
@@ -74,7 +96,7 @@ function Form({ addToDo }) {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <input type="submit" />
+      <input type="submit" value="ADD" />
     </form>
   );
 }
