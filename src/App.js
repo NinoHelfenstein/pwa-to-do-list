@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    { id: 1, todo: "Example Todo Nr 1", done: false },
-    { id: 2, todo: "Example Todo Nr 2", done: false },
-    { id: 3, todo: "Example Todo Nr 3", done: true },
-  ]);
+  const [todos, setTodos] = useState(() => {
+    const localData = localStorage.getItem("toDoStorage");
+    return localData
+      ? JSON.parse(localData)
+      : localStorage.setItem("toDoStorage", "[]");
+  });
+  useEffect(() => {
+    localStorage.setItem("toDoStorage", JSON.stringify(todos));
+  }, [todos]);
 
   useEffect(() => {
     const length = todos.filter((todo) => todo.done === false).length;
